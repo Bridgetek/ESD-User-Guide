@@ -1,0 +1,158 @@
+Setup & Install
+===============
+
+.. _installation:
+
+System Requirements
+-------------------
+To install ESD application, ensure that your system meets the requirements recommended below:
+
+.. hlist::
+   :columns: 1
+
+   * Ideally Windows 10; alternatively, Windows 8 or 7 with the latest windows updates
+   * 1.6GHz or faster processor
+   * 1GB of RAM (1.5GB if running on a virtual machine)
+   * Multi-Core CPU is highly recommended
+   * At least 512MB hard disk space
+   * Display resolution 1080x800 pixels or higher
+   * “Write” permission to the installation folder
+
+
+Hardware Requirements
+---------------------
+| The exported C source code from ESD is targeted at EVE based platform, which typically consists of an Eve module and a host (MCU or PC based module). 
+| 
+| The supported platforms are listed as below: 
+
+.. image:: images/figure_1.png
+
+.. csv-table:: Table 1: Compatibe platform!
+   :header: "Platform Name (Build Target)", "Compatible EVE Module", "Compatible MCU Module Name", "Compatible PC based Module"
+   :widths: 15, 15, 15, 15
+
+   "E810A-HV35R", "ME810A-HV35R6(320X480)", "MM900EV1, MM2040EV2", "N.A."
+   "ME812A-WH50R", "ME812A-WH50R6 (800x480)", " ", " "
+   "ME812AU-WH50R", "ME812AU-WH50R6 (800x480)", "N.A.", "FT4222H8 (libFT4222.dll)"
+   "ME813A-WH50C", "ME813A-WH50C6 (800x480)", "MM900EV1, MM2040EV2", "N.A."
+   "ME813AU-WH50C", "ME813AU-WH50C6 (800x480)", "N.A.", "FT4222H8 (libFT4222.dll)"
+   "VM810C50A", "VM810C50A6 (800x480)", "N.A.", "MPSSE7 (libMPSSE.dll)"
+   "VM816C50A", "VM816C4 (800x480)", "N.A.", "MPSSE7 (libMPSSE.dll)"
+   "VM816CU50A", "VM816CU4 (800x480)", "N.A.", "FT4222H8 (libFT4222.dll)"
+   "ME817EV-WH70C", "ME817EV5 (1024X600)", "MM900EV1, MM2040EV2", "FT4222H8 (libFT4222.dll)"
+   "ME817EV-WH10C", "ME817EV5 (1280X800)", "N.A", "FT4222H8 (libFT4222.dll)"
+   "Gameduino 3X Dazzler for Pico", "Gameduino 3X Dazzler (HDMI output 1280x720)", "Raspberry Pi Pico3", "N.A."
+   "IDM2040-7A", "IDM2040-7A9 (800x480)", "Raspberry Pi Pico3", "N.A."
+   "IDM2040-43A", "IDM2040-43A (480x272)", "Raspberry Pi Pico3", "N.A."
+
+1. MM900EV development modules: 
+a. MM900EVxA – End of Life 
+b. MM900EVxB - https://brtchip.com/product/mm900ev1b/
+c. MM900EV-Lite - https://brtchip.com/product/mm900ev-lite/  
+
+2. MM2040EV is a Raspberry Pi Pico adaptor board: https://brtchip.com/product/mm2040ev/ 
+
+3. Raspberry Pi Pico is from: https://www.raspberrypi.com/products/raspberry-pi-pico/
+
+4. VM816C is the EVE 3 development module: https://brtchip.com/wp-content/uploads/Support/Documentation/Datasheets/ICs/EVE/DS_VM816C.pdf
+
+5. ME817EV is the EVE 4 development module: https://brtchip.com/product-category/products/modules/eve4/
+
+6. The EVE 2 development modules: check https://brtchip.com/product-category/products/modules/eve2/  for details
+
+7. MPSSE stands for “multi-purpose synchronous serial engine”. The following Bridgetek or FTDI devices support it: 
+
+a. VA800A-SPI board
+b. C232HM-EDHSL-0(5V) cable 
+c. C232HM-DDHSL-0(3.3V) cable
+
+8. FT4222 refers to the bridge chip which converts from USB Hi-Speed transportation to Multi-Channel Serial SPI protocol. See: 
+https://ftdichip.com/products/ft4222h/
+
+
+
+
+9. IDM2040 is an embedded application platform from Bridgetek which consists of:
+
+a. RP 2040 as MCU: https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf
+b. BT817 as GPU: BT817/8 Advanced Embedded Video Engine (brtchip.com)
+
+10.   Gameduino 3X Dazzler is an open-source project originally for Arduino: https://www.crowdsupply.com/excamera/gameduino-3x-dazzler
+ESD supports one variety – Gameduino 3X Dazzler for Pico, which consists of:
+
+•  Raspberry Pi Pico as MCU module
+•  BT815 as GPU
+
+You can get more details from: https://excamera.com/sphinx/store.html#gameduino-3x-dazzler-for-pico-39
+
+
+
+
+
+Dependencies / Pre-Requisites
+-----------------------------
+•  Visual C++ Redistributable for Visual Studio 2015
+
+If the PC does not have Microsoft Visual Studio 2015 installed, Visual C++ Redistributable is required. Users can download this from: 
+
+https://www.microsoft.com/en-sg/download/details.aspx?id=48145
+
+•  Windows 10 Universe C Runtime
+
+ESD has run-time dependency on Windows 10 Universe C Runtime (CRT). You may download it from https://www.microsoft.com/en-us/download/details.aspx?id=48234 and install on your PC should the following problem be encountered: 
+
+ 
+Figure 3 - Screen Designer - System Error
+
+•  FT9XX Tool Chain Version 2.4.0 or later
+
+To compile and build projects, the FT9XX Tool Chain 2.4.0 or later version must be installed on the PC.  It is downloadable from https://brtchip.com/ft9xx-toolchain/ .
+
+Please ensure that the Tool Chain executable path is defined by the system PATH environment variable.
+Users are advised to check the known issues and limitations (of FT9XX Toolchain) while building the ESD project with FT9XX Toolchain. The respective FT9XX Toolchain package version release note contains the list of known issues and limitations.
+
+For ESD, we recommend users to install FT9XX Tool Chain version 2.5.0 or later version for the best results. 
+
+•  Raspberry Pi Pico Tool Chain
+
+To compile and build Pico projects, several tool chains must be installed on the PC.
+They are: Pico-SDK, python 3.8, GNU Embedded Toolchain for Arm and Cmake. They can be downloaded/cloned from the following:
+  Pico-SDK - https://github.com/raspberrypi/pico-sdk
+  Python 3.8 - https://www.python.org/downloads/
+  GNU Embedded Toolchain - https://developer.arm.com/downloads/-/gnu-rm
+  CMake - https://cmake.org/download/
+
+ESD will check system environment variables to find these tool chains, and it also provides a user dialog to configure the tool chain path under Tools menu:
+
+Installing ESD Package
+----------------------
+
+Installation Folder
+-------------------
+
+
+
+.. code-block:: console
+
+   (.venv) $ pip install lumache
+
+Creating recipes
+----------------
+
+To retrieve a list of random ingredients,
+you can use the ``lumache.get_random_ingredients()`` function:
+
+.. autofunction:: lumache.get_random_ingredients
+
+The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
+or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
+will raise an exception.
+
+.. autoexception:: lumache.InvalidKindError
+
+For example:
+
+>>> import lumache
+>>> lumache.get_random_ingredients()
+['shells', 'gorgonzola', 'parsley']
+

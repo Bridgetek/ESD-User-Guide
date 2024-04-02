@@ -1,0 +1,99 @@
+Working with ESD
+================
+
+Major features
+--------------
+Support full BT81X features
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Support for ASTC bitmap format
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Support for
+"""""""""""
+
+Key Features
+------------
+
+The following are some of the key features of EVE Screen Designer:
+
+.. hlist::
+   :columns: 1
+
+   * **WYSIWYG** GUI
+   * High level widgets
+   * No EVE display list knowledge required
+   * Widget based GUI construction
+   * Drag and drop widget to create screen layout
+   * Inter widget communication 
+   * Screen logic creation without coding
+   * Simulation of screen logic and user touch input using mouse
+   * Building and downloading the generated “C” code (if FT9XX/Pico Toolchain is installed)
+
+
+What’s new in ESD 4.18
+----------------------
+**New Features:**
+
+.. hlist::
+   :columns: 1
+
+   * Removed irrelevant source codes from the HAL of exported ESD project.
+   * Added the support of BT88x based module:  IDM2040-43A.
+   * Introduced a new feature in the ESD Textbox widget, enabling automatic fitting of its text within the box.
+   * Implemented the ability to double-click to open example projects.
+   * Added a configuration select the QSPI(Quad) mode or single SPI mode.
+   * *Replaced include file names "FT_" with "Ft" and "<FT" with "<Ft" in all the source code.*
+   * Added the Icon Theme project to the Example projects.
+   * Provided support for the Resource type PROGMEM option for image resources.
+   * Added the Asset Browser project into the Example projects.
+   * Improved the About window.
+   * Fixed the error that occurred when opening the bitmap Persistence example project in Windows Sandbox.
+   * Removed unnecessary Qt debugging DLLs.
+   * Corrected the problem of missing text in some logic editor nodes.
+   * Fixed the bug where the Font Icon dialog would still appear after the app was closed.
+   * Resolved the issue that the Vertical Linear Roller Widget can't scroll.
+   * Added Graph example project into Intermediate category of example projects.
+   * Updated the version attribute to “41802” for all example projects.
+   * Fixed the Image convert error with DXT1L2 and DXT1PALETTED format.
+   * Hid the irrelevant options “Memory Pool Limit” and “Pre-allocated Memory Pool” when Memory Pool Allocator is set to FALSE.
+
+Known Issues & Limitations
+--------------------------
+
+The following are some known issues and limitations of ESD: 
+ 
+* Only the BT81X/FT81X series EVE is supported. FT80X Series EVE is NOT supported.
+
+* The C code editor in ESD does not support the following features:
+ 
+   * Code completion
+   * Column mode 
+   * Line bookmarking
+   * Error and Warning Marks
+   * Structure Visualizer
+   * Word Wrap
+   * Expand and collapse blocks of code.
+   * Highlighting of multiple selected text portions
+
+* If the project file path is too long (i.e., more than 512 bytes), ESD may have a problem opening it. The typical error message is shown below: 
+
+“Unable to generate output files, check directory permission at: C:\Users\xxxx.xxxx\Project\ESD\......”
+
+Where
+
+“C:\Users\xxxx.xxxx\Project\ESD\......” refers to the project folder.
+
+* Logic node editor background goes white after system hibernates.
+
+* In some unusual cases, users may encounter a dialog box (shown below) which will not affect the functionality. In this case, just ignore the dialog box by closing it. 
+
+ 
+
+* In few cases, users may need to click [Recompile] at the toolbar to update the frozen simulation result. 
+
+ 
+
+* The Gameduino 3X dazzler platform does not currently support game controllers, which means that users are unable to interact with ESD projects. Additionally, the use of an SD card is necessary.
+
+* Extended font is not supported in FT81X chips, but no error report will be generated if choose it in ESD
+
+* When utilizing the ESD Circular Gradient Slider, certain scenarios may cause lines to appear on the Screen Layout Editor (Emulator), as depicted in Figure 1. However, no lines are ever displayed on the hardware side, as illustrated in Figure 2.
