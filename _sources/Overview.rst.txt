@@ -6,6 +6,11 @@ Introduction
 | EVE Screen Designer (ESD) is the next generation of smart IDE for EVE, making EVE-based GUI development much easier to accomplish. This tool enables users to build one GUI application using a visual programming  method without needing to know any EVE-specific display list commands.
 | 
 | ESD provides a WYSIWYG (“What You See Is What You Get”) environment for editing graphics, designing visual effects, and defining GUI application user logic, generating ANSI C code for the targeted hardware platform. Users can also choose to simulate the whole design to experience the UI before compiling and downloading the generated source code.  Furthermore, ESD has the capability to work seamlessly with Bridgetek FT9XX Toolchain. Users can compile, link the generated source code with FT9XX Toolchain and upload it to the targeted platform without leaving ESD. From 4.13 onward, ESD has the same capability as FT90X platform to work with Raspberry Pi Pico.
+| 
+| Intro to ESD GUI Video: 
+.. raw:: html
+
+   <iframe src="https://brtchip.sharepoint.com/sites/EveToolchainTeam-ESD/_layouts/15/embed.aspx?UniqueId=b3491538-6137-476f-a597-fd1a0ecb747f&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="Intro to ESD GUI_v2.mp4"></iframe>
 
 Key Features
 ------------
