@@ -53,7 +53,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#dependencies-pre-requisites">Dependencies / Pre-Requisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installing-esd-package">Installing ESD Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installation-folder">Installation Folder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-recipes">Creating recipes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Working%20with%20ESD.html">Working with ESD</a></li>
@@ -259,23 +258,6 @@ They are: Pico-SDK, python 3.8, GNU Embedded Toolchain for Arm and Cmake. They c
 </section>
 <section id="installation-folder">
 <h2>Installation Folder<a class="headerlink" href="#installation-folder" title="Link to this heading"></a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>lumache
-</pre></div>
-</div>
-</section>
-<section id="creating-recipes">
-<h2>Creating recipes<a class="headerlink" href="#creating-recipes" title="Link to this heading"></a></h2>
-<p>To retrieve a list of random ingredients,
-you can use the <code class="docutils literal notranslate"><span class="pre">lumache.get_random_ingredients()</span></code> function:</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">kind</span></code> parameter should be either <code class="docutils literal notranslate"><span class="pre">&quot;meat&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;fish&quot;</span></code>,
-or <code class="docutils literal notranslate"><span class="pre">&quot;veggies&quot;</span></code>. Otherwise, <code class="xref py py-func docutils literal notranslate"><span class="pre">lumache.get_random_ingredients()</span></code>
-will raise an exception.</p>
-<p>For example:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">lumache</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">lumache</span><span class="o">.</span><span class="n">get_random_ingredients</span><span class="p">()</span>
-<span class="go">[&#39;shells&#39;, &#39;gorgonzola&#39;, &#39;parsley&#39;]</span>
-</pre></div>
-</div>
 </section>
 </section>
 
