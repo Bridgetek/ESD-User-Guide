@@ -78,11 +78,12 @@ The following are some known issues and limitations of ESD:
 
 * If the project file path is too long (i.e., more than 512 bytes), ESD may have a problem opening it. The typical error message is shown below: 
 
-“Unable to generate output files, check directory permission at: C:\Users\xxxx.xxxx\Project\ESD\......”
+“Unable to generate output files, check directory permission at: C:/Users/xxxx.xxxx/Project/ESD/......”
 
 Where
 
-“C:\Users\xxxx.xxxx\Project\ESD\......” refers to the project folder.
+“C:/Users/xxxx.xxxx/Project/ESD/......” refers to the project folder.
+
 
 * Logic node editor background goes white after system hibernates.
 
